@@ -1,0 +1,13 @@
+<view class="train-info">
+
+  <view class="title">培训信息</view>
+  
+  <view class="list">
+  
+    <view wx:for="{{articleList}}" class="item"  catchtap="toDetail"   class="item" wx:for-item="detailItem" wx:for-index="detailIndex" wx:key="detailIndex" catchtap="toDetail" data-article="{{detailItem}}">
+      <text class="item-title ellipsis">{{detailItem.title}}</text>
+      <text class="item-time">{{detailItem.create_time}}</text>
+    </view>
+  </view>
+
+</view>

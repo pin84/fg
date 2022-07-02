@@ -1,0 +1,49 @@
+.about {
+  padding: 32rpx;
+}
+.aboutTitle {
+  font-size: 46rpx;
+  font-weight: bold;
+  color: #191A19;
+  padding: 32rpx 0;
+}
+.aboutText {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #191A19;
+  margin-bottom: 12rpx;
+}
+.about .articleBox {
+  width: 100%;
+  padding: 48rpx 32rpx;
+}
+.about .articleBox .articleItem {
+  padding: 24rpx 0;
+}
+.about .articleBox .articleItem:last-child {
+  border: none;
+}
+.about .articleBox .articleItem .imgBoxImg {
+  width: 160rpx;
+  height: 160rpx;
+  border: 4rpx solid white;
+  border-radius: 50%;
+}
+.about .articleBox .articleItem .msgBox {
+  width: calc(100% - 160rpx);
+  height: 140rpx;
+  padding-left: 24rpx;
+}
+.about .articleBox .articleItem .msgBoxTitle {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #191A19;
+  margin-bottom: 24rpx;
+}
+.about .articleBox .articleItem .msgBoxTime {
+  width: 100%;
+  display: block;
+  font-size: 24rpx;
+  color: #919998;
+  word-wrap: break-word;
+}

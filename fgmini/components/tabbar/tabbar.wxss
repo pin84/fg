@@ -1,0 +1,72 @@
+.mixins_padding_bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.penetrate {
+  user-select: none;
+}
+.app_tabbar {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  background: white;
+}
+.app_tabbar .tabbar {
+  width: 100vw;
+  height: 98rpx;
+}
+.app_tabbar_fill {
+  background: transparent;
+}
+.app_tabbar_fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+}
+.app_tabbar_fixed .tabbar {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app_tabbar_fixed .tabbar .tabbar_item {
+  color: #8a8a8a;
+  font-size: 24rpx;
+}
+.app_tabbar_fixed .tabbar .tabbar_item .contentBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+.app_tabbar_fixed .tabbar .tabbar_item .contentBox .tabbar_item_icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+.app_tabbar_fixed .tabbar .tabbar_item .contentBox .tabbar_item_dot {
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  top: -8rpx;
+  right: -40rpx;
+  border-radius: 50%;
+  font-size: 22rpx;
+  color: white;
+  background: #E70000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app_tabbar_fixed .tabbar .mianTab {
+  margin-top: -40rpx;
+}
+.app_tabbar_fixed .tabbar .mianTab .contentBox .tabbar_item_icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  border: 4rpx solid white;
+  background: white;
+}

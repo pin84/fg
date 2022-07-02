@@ -1,0 +1,31 @@
+<view class="complaint">
+  <view class="hotline">
+    <view class="line_box flex f_a_center f_j_center">
+      <view class="line"></view>
+      <view class="title">客服热线</view>
+      <view class="line"></view>
+    </view>
+    <view
+      class="cell_item flex f_a_center"
+      wx:for="{{complaintList}}"
+      wx:key='index'
+    >
+      <image class="item_icon" src="{{item.img || __img.mine.defaultAvatar}}"></image>
+      <view class="item_content flex f_j_between">
+        <view class="content_left">
+          <view class="name">{{item.name || ""}}</view>
+          <view class="phone">{{item.phone || ""}}</view>
+        </view>
+        <view
+          class="content_right flex f_a_center f_j_center"
+          bindtap="pageClick"
+          data-type='telephone'
+          data-phone="{{item.phone || ''}}"
+        >
+          拨打
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

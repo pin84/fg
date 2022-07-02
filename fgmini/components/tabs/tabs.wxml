@@ -1,0 +1,14 @@
+<view class="tabsBox">
+  <view
+    class="tabsItem"
+    wx:for="{{tabsList}}"
+    wx:key="index"
+    catchtap="comClick"
+    data-type="tabs"
+    data-index="{{index}}"
+  >
+    <text class="tabsItemText {{tabsIndex === index ? 'tabsItemText_active' : ''}}">{{item.name}}</text>
+    <view class="tabsItemRound {{tabsIndex === index ? 'tabsItemRound_active' : ''}}"></view>
+    <view class="tabsItemMark {{tabsIndex === index ? 'tabsItemMark_active' : ''}}"></view>
+  </view>
+</view>

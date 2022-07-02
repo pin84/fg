@@ -1,0 +1,2 @@
+<view class="emptyFill flex f_a_center f_j_center" style="width: {{width}}; height: {{height}}">暂无数据</view>
+

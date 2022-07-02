@@ -1,0 +1,28 @@
+<view class="tabsContent flex f_a_center">
+  <tabs tabsList="{{topList}}" tabsIndex="{{topListIndex}}" bindcallback="comCallback"></tabs>
+</view>
+<view class="tabsContentFill"></view>
+
+
+<view id="policy">
+  <!-- <view  > -->
+  <view class="scrollBox flex f_j_between">
+    <view class="scrollItem" wx:for="{{curDataList}}" wx:for-item="detailItem" wx:for-index="detailIndex" wx:key="detailIndex" catchtap="toDetail" data-article="{{detailItem}}">
+      <view class="imgBox">
+        <customImg src="{{detailItem.coverURL || ''}}" img-class="scrollItemImg" />
+      </view>
+      <view class="scrollItemTitle ellipsis">{{detailItem.title || ""}}</view>
+      <view class="descMsg flex f_a_center">
+        <text class="descMsgText ellipsis">{{detailItem.subTitle}}</text>
+      </view>
+      <view class="descMsg flex f_a_center">
+        <text class="descMsgText ellipsis">{{detailItem.time}}</text>
+      </view>
+    </view>
+  </view>
+  <comEmpty height="80vh" width="100vw" wx:if="{{item.list.length === 0}}"></comEmpty>
+  <!-- </view> -->
+
+</view>
+
+<tabbar tabIndex="{{3}}"></tabbar>

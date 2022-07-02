@@ -1,0 +1,94 @@
+.shuji {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.shuji .swiperBox {
+  position: relative;
+  margin: 0 auto 40rpx;
+  width: 100vw;
+  height: 376rpx;
+  flex: 0 0 376rpx;
+  overflow: hidden;
+}
+.shuji .swiperBox .swiper {
+  width: 100%;
+  height: 100%;
+}
+.shuji .swiperBox .swiperItem {
+  width: 100%;
+  height: 100%;
+}
+.shuji .swiperBox .swiperItemImg {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #F5F6F6;
+}
+.shuji .swiperBox .dotBox {
+  position: absolute;
+  bottom: 20rpx;
+  width: 100%;
+  height: 8rpx;
+}
+.shuji .swiperBox .dotBox .dotItem {
+  width: 8rpx;
+  height: 8rpx;
+  background: #FFFFFF;
+  opacity: 0.4;
+  border-radius: 8rpx;
+  margin: 0 4rpx;
+  transition: all 0.3s;
+}
+.shuji .swiperBox .dotBox .dotItem_active {
+  opacity: 1;
+  width: 20rpx;
+}
+.shuji .info-box {
+  display: flex;
+  flex: 0 0 200rpx;
+  overflow: hidden;
+}
+.shuji .info-box .info {
+  margin-left: 20rpx;
+  white-space: normal;
+  word-break: break-all;
+}
+.shuji .list {
+  height: 100%;
+  overflow-y: scroll;
+  margin-top: 20rpx;
+}
+.shuji .list .item {
+  display: flex;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 15rpx 10rpx;
+}
+.shuji .list .item .imgBox {
+  width: 200rpx;
+  height: 120rpx;
+  flex: 0 0 200rpx;
+  overflow: hidden;
+  position: relative;
+  margin-right: 30rpx;
+}
+.shuji .list .item .right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.shuji .list .item .right .title {
+  width: 100%;
+  font-size: 28rpx;
+}
+.shuji .list .item .fs_12 {
+  font-size: 24rpx;
+}
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

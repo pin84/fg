@@ -1,0 +1,96 @@
+<view class="home {{showPage ? 'home_show' : ''}}">
+  <!-- 轮播图模块 -->
+  <view class="swiperBox">
+    <swiper
+      autoplay
+      circular
+      bindchange="changeSwiper"
+      data-key="swiperDot"
+      class="swiper"
+    >
+      <block wx:for="{{bannerInfos || []}}" wx:key="index">
+        <swiper-item>
+          <view
+            class="swiperItem"
+            catchtap="pageClick"
+            data-type="swiper"
+            data-item="{{item}}"
+          >
+            <customImg src="{{item.imgURL || ''}}" img-class="swiperItemImg" />
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="dotBox flex f_a_center f_j_center" hidden="{{bannerInfos.length < 2}}">
+      <view
+        class="dotItem {{swiperDot === index ? 'dotItem_active' : ''}}"
+        wx:for="{{bannerInfos || []}}"
+        wx:key="index"
+      ></view>
+    </view>
+  </view>
+  <!-- 功能区 -->
+  <view class="navBox flex f_j_center">
+    <view 
+      class="navItem flex f_c f_a_center f_j_center" 
+      catchtap="pageClick"
+      data-type="nav"
+      data-item="{{item}}"
+      wx:for="{{iconInfos || []}}"
+      wx:key="index"
+    >
+      <text class="iconfont {{item.icon || ''}} navItemIcon" data-index='{{index}}'></text>
+      <text class="navItemName">{{item.name}}</text>
+    </view>
+    <!-- <view class="navItem navItem_fill" wx:for="{{3}}" wx:key="index"></view> -->
+  </view>
+  <!-- 设计师 -->
+  <view class="titleBox flex f_a_center">
+    <!-- <image class="titleBoxIcon" src="{{__img.home.designerIcon}}" /> -->
+    <text class="iconfont icon-shejishi2 titleBoxIcons"></text>
+    <text>设计师</text>
+  </view>
+  <view class="designerBox flex">
+    <view 
+      class="designerItem flex f_c f_a_center f_j_center" 
+      catchtap="pageClick"
+      data-type="designer"
+      data-item="{{item}}"
+      wx:for="{{designerInfos || []}}"
+      wx:key="index"
+      hidden="{{index > 3}}"
+    >
+      <customImg src="{{item.avatarUrl || ''}}" img-class="designerItemImg" />
+      <text class="designerItemName ellipsis">{{item.username || item.nickName || ""}}</text>
+    </view>
+    <customEmpty height="200rpx" wx:if="{{designerInfos.length === 0}}"></customEmpty>
+  </view>
+  <!-- 文章 -->
+  <view class="titleBox titleBox_12 flex f_a_center">
+    <!-- <image class="titleBoxIcon" src="{{__img.home.articleIcon}}" /> -->
+    <text class="iconfont icon-guanfangzixun titleBoxIcons"></text>
+    <text>乡村政策</text>
+  </view>
+  <view class="articleBox">
+    <view 
+        class="articleItem flex f_a_center"
+        catchtap="pageClick"
+        data-type="article"
+        data-item="{{item}}"
+        wx:for="{{articleInfos || []}}"
+        wx:key="index"
+    >
+        <view class="imgBox">
+            <customImg src="{{item.coverURL || ''}}" img-class="imgBoxImg"/>
+        </view>
+        <view class="msgBox flex f_c f_j_between">
+            <view class="msgBoxTitle ellipsis_more">{{item.title || ""}}</view>
+            <text class="msgBoxTime">{{item._showTime || ""}}</text>
+        </view>
+    </view>
+    <customEmpty height="200rpx" wx:if="{{articleInfos.length === 0}}"></customEmpty>
+  </view>
+    
+</view>
+
+<tabbar tabIndex="{{0}}"></tabbar>

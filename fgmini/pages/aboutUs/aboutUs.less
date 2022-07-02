@@ -1,0 +1,55 @@
+@fontColor: #191A19;
+@descColor: #919998;
+.about {
+    padding: 32rpx;
+    &Title {
+        font-size: 46rpx;
+        font-weight: bold;
+        color: @fontColor;
+        padding: 32rpx 0;
+    }
+    &Text {
+        font-size: 28rpx;
+        line-height: 40rpx;
+        color: @fontColor;
+        margin-bottom: 12rpx;
+    }
+    .articleBox {
+        width: 100%;
+        padding: 48rpx 32rpx;
+        .articleItem {
+            padding: 24rpx 0;
+            &:last-child {
+                border: none;
+            }
+            .imgBox {
+                &Img {
+                    width: 160rpx;
+                    height:  160rpx;
+                    border: 4rpx solid white;
+                    border-radius: 50%;
+                }
+            }
+            .msgBox {
+                width: calc(100% - 160rpx);
+                height: 140rpx;
+                padding-left: 24rpx;
+                &Title {
+                    font-size: 32rpx;
+                    font-weight: bold;
+                    color: @fontColor;
+                    margin-bottom: 24rpx;
+                }
+                &Time {
+                    width: 100%;
+                    display: block;
+                    font-size: 24rpx;
+                    color: @descColor;
+                    word-wrap: break-word;
+                    // text-align: right;
+                }
+            }
+            
+        }
+    }
+}

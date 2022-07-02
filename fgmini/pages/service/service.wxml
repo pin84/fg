@@ -1,0 +1,3 @@
+<view class="service">
+    <parser html='{{html || ""}}'></parser>
+</view>

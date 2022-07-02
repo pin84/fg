@@ -1,0 +1,6 @@
+<view class="app_poster {{posterImg ? 'app_poster_show' : ''}}" catchtouchmove="stopBubble" catchtap="pageClick" data-type="close">
+    <poster id="poster" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail"></poster>
+    <view catchtap="pageClick" data-type="showImg" hidden="{{!posterImg}}">
+        <image class="posterImg" src="{{posterImg}}" bindlongpress="pageClick" data-type="longtap"/>
+    </view>
+</view>

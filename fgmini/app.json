@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/webview/webview",
+    "pages/adapter/adapter",
+    "pages/designer/designer",
+    "pages/publish/publish",
+    "pages/policy/policy",
+    "pages/service/service",
+    "pages/membership/membership",
+    "pages/complaint/complaint",
+    "pages/order/order",
+    "pages/orderDetail/orderDetail",
+    "pages/aboutUs/aboutUs",
+    "pages/articleDetail/articleDetail",
+    "pages/zhuChunShuJi/zhuChunShuJi",
+    "pages/trainingInfo/trainingInfo",
+    "pages/mall/mall",
+    "pages/caseAnalysis/caseAnalysis"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "subPackages": [],
+  "tabBar": {
+    "custom": true,
+    "color": "#6e6d6b",
+    "selectedColor": "#e64340",
+    "borderStyle": "white",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/tabbar/home_n.png",
+        "selectedIconPath": "assets/tabbar/home_a.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/designer/designer",
+        "iconPath": "assets/tabbar/designer_n.png",
+        "selectedIconPath": "assets/tabbar/designer_a.png",
+        "text": "设计师"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "iconPath": "assets/tabbar/publish_n.png",
+        "selectedIconPath": "assets/tabbar/publish_a.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/policy/policy",
+        "iconPath": "assets/tabbar/policy_n.png",
+        "selectedIconPath": "assets/tabbar/policy_a.png",
+        "text": "乡村振兴"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "assets/tabbar/mine_n.png",
+        "selectedIconPath": "assets/tabbar/mine_a.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

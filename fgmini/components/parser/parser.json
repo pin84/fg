@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "comEmpty": "/components/common/empty/empty",
+    "trees": "./trees/trees"
+  }
+}

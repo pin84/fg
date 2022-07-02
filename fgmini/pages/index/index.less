@@ -1,0 +1,156 @@
+@fontColor: #191A19;
+@descColor: #919998;
+
+.home {
+    width: 100vw;
+    padding: 0 0 64rpx 0;
+    position: relative;
+    opacity: 0;
+    transition: all 0.3s;
+    &_show {
+        opacity: 1;
+    }
+    .swiperBox {
+        position: relative;
+        margin: 0 auto 40rpx;
+        width: 100vw;
+        height: 376rpx;
+        overflow: hidden;
+        .swiper {
+            width: 100%;
+            height: 100%;
+            &Item {
+                width: 100%;
+                height: 100%;
+                &Img {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    background: #F5F6F6;
+                }
+            }
+        }
+        .dotBox {
+            position: absolute;
+            bottom: 20rpx;
+            width: 100%;
+            height: 8rpx;
+            .dotItem {
+                width: 8rpx;
+                height: 8rpx;
+                background: #FFFFFF;
+                opacity: 0.4;
+                border-radius: 8rpx;
+                margin: 0 4rpx;
+                transition: all 0.3s;
+                &_active {
+                    opacity: 1;
+                    width: 20rpx;
+                }
+            }
+        }
+    }
+
+    .navBox {
+        width: 100%;
+        flex-wrap: wrap;
+        .navItem {
+            width: 30%;
+            margin-bottom: 32rpx;
+            &_fill {
+                height: 0;
+                margin: 0;
+            }
+            &Icon {
+                font-size: 64rpx;
+                color: #e64340;
+                margin-bottom: 12rpx;
+            }
+            &Name {
+                font-size: 28rpx;
+                color: @fontColor;
+            }
+        }
+    }
+
+    .titleBox {
+        font-size: 32rpx;
+        color: @fontColor;
+        font-weight: bold;
+        margin: 36rpx 0;
+        padding: 0 32rpx;
+        &_12 {
+            margin-bottom: 12rpx;
+        }
+        &Icon {
+            width: 48rpx;
+            height: 48rpx;
+            margin-right: 12rpx;
+        }
+        &Icons {
+            color: #191A19;
+            font-size: 48rpx;
+            margin-right: 12rpx;
+        }
+    }
+    .designerBox {
+        width: 100%;
+        padding: 0 32rpx;
+        margin-bottom: 68rpx;
+        flex-wrap: wrap;
+        .designerItem {
+            width: 25%;
+            &Img {
+                width: 102rpx;
+                height: 102rpx;
+                border-radius: 50%;
+                margin-bottom: 12rpx;
+            }
+            &Name {
+                font-size: 28rpx;
+                color: @fontColor;
+                text-align: center;
+                width: 100%;
+                display: block;
+                padding: 0 12rpx;
+            }
+        }
+    }
+    .articleBox {
+        width: 100%;
+        padding: 0 32rpx;
+        .articleItem {
+            padding: 24rpx 0;
+            border-bottom: 2rpx solid #E9E9E9;
+            &:last-child {
+                border: none;
+            }
+            .imgBox {
+                &Img {
+                    width: 240rpx;
+                    height:  160rpx;
+                    border-radius: 8rpx;
+                }
+            }
+            .msgBox {
+                width: calc(100% - 240rpx);
+                height: 140rpx;
+                padding-left: 24rpx;
+                &Title {
+                    font-size: 32rpx;
+                    font-weight: bold;
+                    color: @fontColor;
+                    margin-bottom: 24rpx;
+                }
+                &Time {
+                    width: 100%;
+                    display: block;
+                    font-size: 24rpx;
+                    color: @descColor;
+                    text-align: right;
+                }
+            }
+            
+        }
+    }
+}

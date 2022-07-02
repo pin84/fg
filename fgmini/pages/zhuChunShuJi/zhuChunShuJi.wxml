@@ -1,0 +1,46 @@
+<view class="shuji">
+
+  <!-- 轮播图模块 -->
+  <view class="swiperBox">
+    <swiper autoplay circular bindchange="changeSwiper" data-key="swiperDot" class="swiper">
+      <block wx:for="{{bannerInfos || []}}" wx:key="index">
+        <swiper-item>
+          <view class="swiperItem" data-type="swiper" data-item="{{item}}">
+            <customImg src="{{item.imgURL || ''}}" img-class="swiperItemImg" />
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="dotBox flex f_a_center f_j_center" hidden="{{bannerInfos.length < 2}}">
+      <view class="dotItem {{swiperDot === index ? 'dotItem_active' : ''}}" wx:for="{{bannerInfos || []}}" wx:key="index"></view>
+    </view>
+  </view>
+
+  <view class="info-box">
+    <view class="img-box">
+      <image style="width: 200rpx; height: 200rpx; background-color: #eeeeee;" mode="aspectFit" src="{{personInfo.coverURL}}"></image>
+    </view>
+
+    <view class="info">
+      <rich-text nodes="{{personInfo.content}}"></rich-text>
+    </view>
+  </view>
+
+
+  <view class="list">
+    <view catchtap="toDetail"  wx:for="{{articleList}}" class="item" wx:for-item="detailItem" wx:for-index="detailIndex" wx:key="detailIndex" catchtap="toDetail" data-article="{{detailItem}}">
+
+
+      <view class="imgBox">
+          <customImg src="{{detailItem.coverURL || ''}}" img-class="scrollItemImg" />
+        </view>
+
+        <view class="right">
+          <view class="title ellipsis">{{detailItem.title}}</view>
+          <view class="fs_12">{{detailItem.create_time}}</view>
+        </view>
+    </view>
+  </view>
+
+
+</view>

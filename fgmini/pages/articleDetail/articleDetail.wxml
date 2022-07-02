@@ -1,0 +1,18 @@
+<view id='cur-article'>
+
+  <view class="top">
+    <view class="title">{{curArticle.title}}</view>
+
+    <view class="time-box">
+      <text>{{curArticle.create_time }}</text>
+    </view>
+
+  </view>
+
+  <!-- <view>
+    <image style="width: 200px; height: 200px; background-color: #eeeeee;" mode="aspectFit" src="{{curArticle.coverURL}}"></image>
+  </view> -->
+
+  <parser class="content" html='{{curArticle.content || ""}}'></parser>
+
+</view>

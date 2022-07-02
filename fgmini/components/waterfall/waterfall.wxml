@@ -1,0 +1,80 @@
+<view class="waterfall waterfallFill">
+  <view
+    class="waterfallList"
+    style="width: {{lineStyle}}"
+    wx:for="{{fillList}}"
+    wx:key="index"
+    id="wf_{{item[comOptions.idKey]}}"
+  >
+    <view class="waterfallItem">
+      <image
+        src="{{item[comOptions.imgKey] || comOptions.errorImg}}"
+        mode="widthFix"
+        class="waterfallItemImg"
+        data-id="{{item[comOptions.idKey]}}"
+        data-mark="wf_{{item[comOptions.idKey]}}"
+        data-index="{{index}}"
+        bindload="_imgLoad"
+        binderror="_imgError"
+        lazy-load="{{false}}"
+      />
+      <view class="waterfallMsg">
+        <view class="waterfallMsgTitle ellipsis_more">{{item[comOptions.titleKey]}}</view>
+        <view class="tags">
+          <view
+            class="tagsItem"
+            wx:for="{{item[comOptions.tagsKey] || []}}"
+            wx:for-item="tag"
+            wx:for-index="tagIndex"
+            wx:key="tagIndex"
+            hidden="{{tagIndex > 1}}"
+          >{{comOptions.tagsNameKey ? tag[comOptions.tagsNameKey] : tag}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="waterfall {{comShow ? 'waterfall_show' : ''}}">
+  <view
+    class="waterfallList"
+    style="width: {{lineStyle}}"
+    wx:for="{{showList}}"
+    wx:for-item="row"
+    wx:for-index="rowIndex"
+    wx:key="rowIndex"
+  >
+    <view
+      class="waterfallItem"
+      wx:for="{{row.list || []}}"
+      wx:for-item="citem"
+      wx:for-index="cindex"
+      wx:key="id"
+      catchtap="_waterfallClick"
+      data-item="{{citem}}"
+    >
+      <image
+        src="{{citem[comOptions.imgKey] || comOptions.errorImg}}"
+        mode="widthFix"
+        class="waterfallItemImg"
+        lazy-load="{{true}}"
+      />
+      <view class="waterfallMsg">
+        <view class="waterfallMsgTitle ellipsis_more">{{citem[comOptions.titleKey]}}</view>
+        <view class="tags">
+          <view
+            class="tagsItem"
+            wx:for="{{citem[comOptions.tagsKey] || []}}"
+            wx:for-item="tag"
+            wx:for-index="tagIndex"
+            wx:key="tagIndex"
+            hidden="{{tagIndex > 1}}"
+          >{{comOptions.tagsNameKey ? tag[comOptions.tagsNameKey] : tag}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

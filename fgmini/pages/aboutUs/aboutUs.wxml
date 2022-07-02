@@ -1,0 +1,28 @@
+<view class="about">
+    <view class="aboutTitle">关于我们</view>
+    <view class="aboutText">XXXXX网络科技有限公司，通过xxxx、xxx、xxx等产品xxxxxxxxxxxxxxxx。</view>
+
+    <view class="articleBox">
+    <view 
+        class="articleItem flex f_a_center"
+        catchtap="pageClick"
+        data-type="product"
+        data-item="{{item}}"
+        wx:for="{{productInfos || []}}"
+        wx:key="index"
+    >
+        <view class="imgBox">
+            <customImg src="{{item.coverURL || ''}}" img-class="imgBoxImg"/>
+        </view>
+        <view class="msgBox flex f_c f_j_between">
+            <view class="msgBoxTitle ellipsis_more">{{item.title || ""}}</view>
+            <text class="msgBoxTime">{{item.desc || ""}}</text>
+        </view>
+    </view>
+
+    <view class="aboutTitle">联系我们</view>
+    <view class="aboutText">XXXXX网络科技有限公司</view>
+    <view class="aboutText">地址：广州市XX区XX路 XXX 号（广州新一代产业园XX号楼XX层）</view>
+    <view class="aboutText">电话：020-88888888</view>
+  </view>
+</view>

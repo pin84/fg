@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "tabbar": "/components/tabbar/tabbar",
+    "customImg": "/components/common/image/image",
+    "comEmpty": "/components/common/empty/empty",
+    "tabs": "/components/tabs/tabs"
+  }
+}

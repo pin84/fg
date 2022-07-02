@@ -1,0 +1,45 @@
+<view class="membership">
+  <view class="cell_item flex f_a_center f_j_between">
+    <view class="item_left">头像</view>
+    <image src="{{userInfo.avatarUrl || ''}}" class="user_pic"></image>
+  </view>
+  <view class="cell_item flex f_a_center f_j_between">
+    <view class="item_left">昵称</view>
+    <view class="item_right">{{userInfo.nickName || ""}}</view>
+  </view>
+  <view class="cell_item flex f_a_center f_j_between">
+    <view class="item_left">真实姓名</view>
+    <view class="item_right">
+      <input
+        type="text"
+        value="{{userInfo.username || ''}}"
+        placeholder="请输入真实姓名"
+        class="lineInput"
+        bindblur="formOperate"
+        data-type="username"
+      />
+    </view>
+  </view>
+  <view class="cell_item flex f_a_center f_j_between">
+    <view class="item_left">手机号</view>
+    <view class="item_right">
+      <input
+        type="text"
+        value="{{userInfo.phone || ''}}"
+        placeholder="请输入手机号码"
+        class="lineInput"
+        bindblur="formOperate"
+        data-type="phone"
+      />
+    </view>
+  </view>
+  <!-- <view class="cell_item flex f_a_center f_j_between">
+    <view class="item_left">申请设计师</view>
+    <view class="item_right">
+      <switch checked="{{userInfo.isDesigner}}" color="#e64340" bindchange="switchChange"/>
+    </view>
+  </view> -->
+
+</view>
+<button class="formBtn" catchtap="pageClick">保存</button>
+

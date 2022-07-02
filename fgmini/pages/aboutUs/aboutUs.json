@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "customImg": "/components/common/image/image"
+  }
+}

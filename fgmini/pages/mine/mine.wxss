@@ -1,0 +1,69 @@
+.mine {
+  width: 100vw;
+  background: white;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.mineShow {
+  opacity: 1;
+}
+.mine .userBox {
+  position: relative;
+  width: 100vw;
+  height: 600rpx;
+  background: rgba(230, 67, 64, 0.8);
+  padding: 210rpx 0 0;
+}
+.mine .userBox .userInfo {
+  padding: 0 42rpx;
+}
+.mine .userBox .userInfoImg {
+  width: 158rpx;
+  height: 158rpx;
+  border-radius: 50%;
+  margin-right: 36rpx;
+}
+.mine .userBox .userInfoName {
+  font-size: 48rpx;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+.mine .userBox .userInfo .desc {
+  font-size: 28rpx;
+  color: white;
+  margin-top: 12rpx;
+}
+.mine .userBox .userInfo .descIcon {
+  margin-right: 12rpx;
+}
+.mine .userBox .descBox {
+  position: absolute;
+  bottom: 80rpx;
+  font-size: 28rpx;
+  color: white;
+  right: 60rpx;
+  height: 60rpx;
+}
+.mine .navBox {
+  width: 100vw;
+  position: relative;
+  border-radius: 60rpx 60rpx 0 0;
+  background: white;
+  margin: -60rpx auto 0;
+  padding: 60rpx 0 0;
+}
+.mine .navBox .navItem {
+  padding: 0 32rpx;
+  height: 100rpx;
+}
+.mine .navBox .navItemIcon {
+  font-size: 38rpx;
+  margin-right: 32rpx;
+}
+.mine .navBox .navItemName {
+  font-size: 36rpx;
+  color: #323233;
+}
+.mine .navBox .navItemMore {
+  font-size: 28rpx;
+}

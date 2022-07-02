@@ -1,0 +1,39 @@
+<view class="mine {{showPage ? 'mineShow' : ''}}">
+  <view class="userBox">
+    <view class="userInfo flex f_a_center" catchtap="pageClick" data-type="login">
+      <image class="userInfoImg" src="{{userInfo.avatarUrl || __img.mine.defaultAvatar}}" mode="aspectFill" />
+      <view>
+        <view class="userInfoName">{{userInfo.nickName || "立即登录"}}</view>
+        <view class="desc flex f_a_center" wx:if="{{userInfo.isDesigner === 5}}">
+          <text class="iconfont icon-shejishirenzhengshejishizhuye descIcon"></text> 
+          <text>设计师</text> 
+          <text wx:if="{{userInfo.username}}">（{{userInfo.username}}）</text>
+        </view>
+      </view>
+      
+
+    </view>
+    <view wx:if="{{userInfo.id}}">
+      <view wx:if="{{userInfo.isDesigner != 5}}" class="descBox flex f_a_center" catchtap="pageClick" data-type="designer">申请成为设计师 > </view>
+    </view>
+  </view>
+  <view class="navBox">
+    <view 
+      class="navItem flex f_a_center f_j_between" 
+      wx:for="{{menuInfos}}" 
+      wx:key="index" 
+      catchtap="pageClick"
+      data-type="nav"
+      data-item="{{item}}">
+      <view class="navItemLeft flex f_a_center">
+        <text class="iconfont {{item.icon || ''}} navItemIcon"></text>
+        <text class="navItemName">{{item.name || ""}}</text>
+      </view>
+      <view class="navItemRight flex f_a_center">
+        <text class="iconfont icon-youjiantou navItemMore"></text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<tabbar tabIndex="{{4}}"></tabbar>

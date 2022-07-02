@@ -1,0 +1,29 @@
+<view class="tabsContent flex f_a_center">
+  <tabs
+    tabsList="{{topList}}"
+    tabsIndex="{{topListIndex}}"
+    bindcallback="comCallback"
+  ></tabs>
+</view>
+<view class="tabsContentFill"></view>
+<view class="order">
+  <view class="orderItem" wx:for="{{topList[topListIndex].list}}" wx:key="index"   wx:for-item="item">
+    <view class="header flex f_a_center f_j_between">
+      <!-- <text class="orderNumber">订单号: 312453687541</text> -->
+      <text class="orderNumber">{{item._showTime || ''}}</text>
+      <!-- <text class="orderStatus">设计中</text> -->
+    </view>
+    <view class="content flex">
+      <view class="imgBox">
+        <customImg src="{{item._showImgList[0]}}" img-class="imgBoxImg" />
+      </view>  
+      <view class="msgBox">
+        <view class="msgBoxTitle ellipsis_more">{{item.remark}}</view>
+      </view>
+    </view>
+    <view class="footer flex f_j_end">
+      <button class="orderBtn" catchtap="pageClick"  data-order="{{item}}" >查看详情</button>
+    </view>
+  </view>
+  <comEmpty height="80vh" width="100vw" wx:if="{{!topList[topListIndex].list.length}}"></comEmpty>
+</view>

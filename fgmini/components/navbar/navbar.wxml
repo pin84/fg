@@ -1,0 +1,47 @@
+<view
+  class="app__navbar_fill"
+  style="height: {{(systemInfo.statusBarHeight || 0) + innerHeight}}px;"
+  wx:if="{{showPlaceholder}}"
+></view>
+<view class="app__navbar nav-class" style="height: {{(systemInfo.statusBarHeight || 0) + innerHeight}}px;{{bgImg ? 'box-shadow: 0 0 0 0;' : ''}}">
+  <!-- 使用背景图 -->
+  <image
+    src="{{bgImg}}"
+    class="app__navbar_bg"
+    mode="widthFix"
+    wx:if="{{bgImg}}"
+  />
+
+  <view class="navbar_status_bar" style="height: {{systemInfo.statusBarHeight || 0}}px;"></view>
+  <view class="navbar_inner" style="height: {{innerHeight || 0}}px;padding-left: {{innerPaddingLeft || 0}}px;padding-right: {{innerPaddingRight || 0}}px;">
+
+    <view
+      class="inner_left ellipsis"
+      style="width:{{innerLeft || 0}}px;"
+      catchtap="_navback"
+      wx:if="{{showBack && !isCustomize}}"
+    >
+      <image src="{{__img.navbar.back}}" class="inner_left_icon" />
+      <text class="inner_left_text ellipsis">{{backText}}</text>
+    </view>
+    <view
+      class="inner_left ellipsis"
+      style="width:{{innerLeft || 0}}px;"
+      catchtap="_navback"
+      wx:elif="{{showHome && !isCustomize}}"
+    >
+      <image src="{{__img.navbar.home}}" class="inner_left_icon home" />
+    </view>
+
+    <view
+      class="inner_content ellipsis"
+      style="width: {{innerContent || 200}}px;"
+      wx:if="{{!isCustomize}}"
+    >{{title}}
+    </view>
+
+    <slot wx:if="{{isCustomize}}"></slot>
+
+  </view>
+</view>
+

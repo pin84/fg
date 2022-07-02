@@ -1,0 +1,30 @@
+<view class="order">
+    <view class="messageBox">
+        <view class="header">订单信息</view>
+        <view class="content">
+            {{order.remark}}
+        </view>
+        <view class="messageLine flex f_j_between f_a_center">
+            <view class="leftBox">发布人</view>
+            <view class="rightBox">{{order.username}}</view>
+        </view>
+        <view class="messageLine flex f_j_between f_a_center">
+            <view class="leftBox">联系电话</view>
+            <view class="rightBox">{{order.phone}}</view>
+        </view>
+        <view class="messageLine flex f_j_between f_a_center">
+            <view class="leftBox">发布时间</view>
+            <view class="rightBox">{{order.create_time}}</view>
+        </view>
+        <view class="messageLine flex f_j_between">
+            <view class="leftBox">地址</view>
+            <view class="rightBox">{{order.addr}}</view>
+        </view>
+    </view>
+
+    <view class="imgBox flex">
+        <view class="imgContent" wx:for="{{order.urlList}}" wx:key="index" catchtap="pageClick" data-type="preview" data-item="{{item}}" data-previw-list='{{order.urlList}}' >
+            <customImg src="{{item}}" img-class="imgContentImg" />
+        </view>
+    </view>
+</view>

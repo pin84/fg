@@ -1,0 +1,17 @@
+// Common Variables
+@app_bottom_height: 98rpx;
+@app_theme_red: #E70000;
+@app_theme_white: #FFFFFF;
+@app_theme_green: #07C160;
+@app_theme_black: #000000;
+@app_theme_bg: #F5F5F5;
+
+// Mixins
+.mixins_padding_bottom {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+// 使元素点击穿透
+.penetrate {
+    user-select: none;
+}

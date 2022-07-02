@@ -1,0 +1,19 @@
+<view class="app_tabbar app_tabbar_fill">
+    <view class="tabbar"></view>
+</view>
+
+<view class="app_tabbar app_tabbar_fixed">
+    <view class="tabbar">
+        <view 
+            class="tabbar_item {{index === tabIndex ? 'tabbar_item_active' : ''}} {{item.className}}" 
+            wx:for="{{tabbarList}}" wx:key="index" 
+            style="width: {{100 / tabbarList.length}}%"
+            catchtap="_tabbarClick" data-index="{{index}}">
+            <view class="contentBox">
+                <image src="{{item[index === tabIndex ? 'icon_selected' : 'icon']}}" class="tabbar_item_icon" />
+                <text style="color: {{item[index === tabIndex ? 'color_selected' : 'color']}}">{{item.name}}</text>
+                <view class="tabbar_item_dot" wx:if="{{!!item.dot}}">{{item.dot}}</view>
+            </view>
+        </view>
+    </view>
+</view>

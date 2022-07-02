@@ -1,0 +1,80 @@
+.case-analysis {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+.case-analysis .designer {
+  width: 100%;
+  flex: 0 0 120rpx;
+  display: flex;
+  padding: 0 24rpx;
+}
+.case-analysis .designer .avatarImg {
+  width: 102rpx;
+  height: 102rpx;
+  border-radius: 50%;
+}
+.case-analysis .designer .info-box {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+.case-analysis .designer .designerName {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333333;
+}
+.case-analysis .tabsContent {
+  flex: 0 0 100rpx;
+  top: 0;
+  left: 0;
+  background: white;
+  box-shadow: 0px 0px 12px 0px rgba(205, 191, 195, 0.6);
+}
+.case-analysis .tabsContentFill {
+  height: 100rpx;
+}
+.case-analysis #policy {
+  height: 100%;
+  overflow: scroll;
+}
+.case-analysis #policy .scrollBox {
+  flex-wrap: wrap;
+  padding: 0 24rpx;
+}
+.case-analysis #policy .scrollBox .scrollItem {
+  width: 330rpx;
+  height: 420rpx;
+  box-shadow: 0rpx 0rpx 32rpx rgba(21, 17, 139, 0.06);
+  border-radius: 8rpx;
+  padding: 20rpx;
+  position: relative;
+  margin-bottom: 24rpx;
+}
+.case-analysis #policy .scrollBox .scrollItem .imgBox {
+  width: 287rpx;
+  height: 224rpx;
+  overflow: hidden;
+  position: relative;
+}
+.case-analysis #policy .scrollBox .scrollItemImg {
+  width: 287rpx;
+  height: 224rpx;
+  border-radius: 8rpx;
+  margin: 0 auto;
+}
+.case-analysis #policy .scrollBox .scrollItemTitle {
+  margin-top: 16rpx;
+  font-size: 32rpx;
+  color: #2e3041;
+}
+.case-analysis #policy .scrollBox .scrollItem .descMsg {
+  margin-top: 16rpx;
+}
+.case-analysis #policy .scrollBox .scrollItem .descMsgText {
+  max-width: 88%;
+  font-size: 24rpx;
+  color: #919998;
+}

@@ -1,0 +1,114 @@
+{
+	"pages": [
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/news/index",
+			"style": {
+				"navigationBarTitleText": "作品资讯"
+			}
+		},
+		{
+			"path": "pages/news/detail",
+			"style": {
+				"navigationBarTitleText": "作品资讯"
+				// "navigationStyle": "custom" ,// 隐藏系统导航栏
+				// "navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
+			}
+		},
+		{
+			"path": "pages/datas/index",
+			"style": {
+				"navigationBarTitleText": "数据管理"
+			}
+		},
+		{
+			"path": "pages/datas/edit",
+			"style": {
+				"navigationBarTitleText": "数据编辑"
+			}
+		},
+		{
+			"path": "pages/inherited/index",
+			"style": {
+				"navigationBarTitleText": "传承人"
+			}
+		},
+		{
+			"path": "pages/inherited/detail",
+			"style": {
+				"navigationBarTitleText": "传承人"
+				// "navigationStyle": "custom" ,// 隐藏系统导航栏
+				// "navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
+			}
+		},
+		{
+			"path": "pages/mine/index",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/works/index",
+			"style": {
+				"navigationBarTitleText": "工作"
+			}
+		},
+		{
+			"path": "pages/works/detail",
+			"style": {
+				"navigationBarTitleText": "传承工作"
+				// "navigationStyle": "custom" ,// 隐藏系统导航栏
+				// "navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
+			}
+		},
+		{
+			"path": "pages/article/index",
+			"style": {
+				"navigationBarTitleText": "用户协议",
+				"navigationStyle": "custom" ,// 隐藏系统导航栏
+				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
+			}
+		}
+    ],
+	"easycom": {
+		"^u-(.*)": "@/components/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "侗戏",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
+	},
+	"tabBar": {  
+		"list": [
+			{  
+				"pagePath": "pages/index/index"
+			},  
+			{  
+				"pagePath": "pages/news/index"
+			},  
+			{  
+				"pagePath": "pages/datas/index"
+			},
+			{  
+				"pagePath": "pages/inherited/index"
+			},
+			{  
+				"pagePath": "pages/mine/index"
+			}
+		]  
+	}
+}

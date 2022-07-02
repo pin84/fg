@@ -1,0 +1,16 @@
+<view class="designer">
+    <view 
+        class="designerItem flex f_a_center" 
+        wx:for="{{designerList}}" 
+        wx:key="index" 
+        catchtap="pageClick"
+        data-type="detail"
+        data-item="{{item}}">
+        <view class="avatar">
+            <customImg src="{{item.avatarUrl || ''}}" img-class="avatarImg" />
+        </view>
+        <text class="designerName">{{item.username || item.nickName || ""}}</text>
+    </view>
+    <customEmpty height="80vh" wx:if="{{designerList.length === 0}}"></customEmpty>
+</view>
+<tabbar tabIndex="{{1}}"></tabbar>

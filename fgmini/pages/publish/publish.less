@@ -1,0 +1,130 @@
+@w: 140rpx;
+
+.df {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#home {
+  box-sizing: border-box;
+  padding: 40rpx;
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+      padding: 10rpx;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: @w;
+      height: @w;
+      border: 1px solid #ccc;
+      position: relative;
+      border-radius: 10rpx;
+      margin: 5rpx;
+
+      .close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 5rpx;
+        color: #ccc;
+      }
+
+      .uploadIcon {
+        font-size: 96rpx;
+        color: #ccc;
+        font-weight: 100;
+      }
+
+      .image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .textareaBox {
+    margin: 32rpx 0;
+    width: 100%;
+    border: 2rpx solid #EEEEEE;
+    border-radius: 8rpx;
+    padding: 16rpx;
+    box-sizing: border-box;
+  }
+
+  .btn {
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 12rpx;
+    color: white;
+    background: #e64340;
+    font-size: 32rpx;
+    margin: 100rpx auto;
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  .text {
+    color: red;
+    font-size: 24rpx;
+    margin: 24rpx 0;
+  }
+
+  .com-input {
+    border: 1px solid #f1f1f1;
+    padding: 10rpx 0;
+    font-size: 28rpx;
+  }
+
+  // border: 1rpx solid #f1f1f1;
+
+  .picker-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    // border-bottom: 1rpx solid #f1f1f1;
+    .picker {
+      width: 100%;
+      padding: 5rpx 0;
+    }
+
+    .addr-box {
+      width: 100%;
+    }
+
+    .iconfont {
+      flex: 0 0 30rpx;
+    }
+  }
+
+  .addr-text {
+    height: 160rpx;
+  }
+
+}
+
+.cell_item {
+  padding: 0;
+  min-height: 88rpx;
+
+  .item_right {
+    color: #1F3332;
+
+    .lineInput {
+      text-align: right;
+    }
+  }
+}
+
+.cell_item_last {
+  margin-bottom: 32rpx;
+}

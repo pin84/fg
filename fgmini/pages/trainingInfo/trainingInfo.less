@@ -1,0 +1,41 @@
+.train-info{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .title{
+    text-align: center;
+    padding: 20rpx 0;
+    font-weight: 600;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .list{
+    height: 100%;
+    padding: 20rpx;
+    overflow: scroll;
+    .item{
+      font-size: 26rpx;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24rpx 0;
+      border-bottom: 1px solid #f1f1f1;
+      .item-title{
+        width: 100%;
+        margin-right: 20rpx;
+      }
+      .item-time{
+        flex: 0 0 150rpx;
+        font-size: 24rpx;
+      }
+    }
+  }
+}
+
+.ellipsis{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
