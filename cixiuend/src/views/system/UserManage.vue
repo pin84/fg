@@ -53,24 +53,6 @@ export default {
       addr: "",
       successor_level: "全部",
 
-      advancedSearch: [
-        {
-          title: "导演",
-          mkey: "director",
-        },
-        {
-          title: "戏班",
-          mkey: "teamname",
-        },
-        {
-          title: "演出时间",
-          mkey: "showtime",
-        },
-        {
-          title: "演出地址",
-          mkey: "showaddr",
-        },
-      ],
       tableData: [],
       tableLineList: [
         {

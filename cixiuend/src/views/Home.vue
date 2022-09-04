@@ -2,11 +2,11 @@
   <div class="home">
     <div class="login-box">
       <div class="img-box">
-        <img src="" alt="" />
+        <img class="logo" src="@/assets/images/bg/logo.png" alt="">
       </div>
 
       <div class="login-right">
-        <div class="img-box-2"></div>
+        <!-- <div class="img-box-2"></div> -->
         <h2>侗族刺绣大数据管理平台</h2>
 
         <div class="input-box">
@@ -30,14 +30,24 @@
             @keyup.enter="login"
           />
         </div>
-        <el-button ref="btn" class="btn" type="primary" @click="login"
-          >登录</el-button
-        >
+        <el-button
+          ref="btn"
+          class="btn"
+          type="primary"
+          @click="login"
+        >登录</el-button>
         <!-- <el-button class="btn" type="primary" @click="test">登录</el-button> -->
-        <a class="pointer" download  href="/static/202205110040.apk">下载手机App</a>
+        <a
+          class="pointer"
+          download
+          href="/static/202205110040.apk"
+        >下载手机App</a>
       </div>
     </div>
-    <div class="tip">三江侗族自治县非物质文化遗产保护与发展中心</div>
+    <div class="tip">
+      <div>三江侗族自治县文化馆（三江侗族自治县非物质文化遗产保护与发展中心）</div>
+      <div>柳州城市职业学院</div>
+    </div>
   </div>
 </template>
 
@@ -83,16 +93,16 @@ export default {
         return;
       }
       console.log("-user-", data);
-      let jurisdictionList  = data.jurisdictionList.split(',')
+      let jurisdictionList = data.jurisdictionList.split(",");
       if (jurisdictionList.length == 1 && jurisdictionList[0] == 10) {
         await msgbox({
           msg: "该账号没有权限登录后台",
         });
         return;
       }
-      
-      localStorage.setItem('jurisdiction' , jurisdictionList.join(',') )
-      localStorage.setItem('userinfo' , JSON.stringify(data) )
+
+      localStorage.setItem("jurisdiction", jurisdictionList.join(","));
+      localStorage.setItem("userinfo", JSON.stringify(data));
 
       this.$router.push("/index");
     },
@@ -127,34 +137,47 @@ export default {
   .login-box {
     @extend .flex;
     background-color: #fff;
-    @include wh(80vw, 60vh);
-    max-width: 844px;
+    @include wh(800px, 404px);
+    border-radius: 10px;
+    overflow: hidden;
     // justify-content: space-between;
     box-sizing: border-box;
     .img-box {
       // @include c-img-box(371px, 100%);
-      background: url("../assets/images/bg/loginBg.png") no-repeat;
+      background: url("../assets/images/bg/loginBg.png") no-repeat 1% ;
       height: 100%;
-      flex: 0 0 44%;
-      background-size: cover;
+      flex: 0 0 50%;
+      background-color: transparent;
+      box-sizing:border-box;
+      box-shadow:0 0 50px 30PX #ffffff inset;
+      display: flex;
+      flex-direction: column;
+      justify-content:  flex-end;
+      align-items: center;
+      .logo{
+        margin-bottom: 20px;
+        width: 50%;
+        display: inline-block;
+      }
     }
     .login-right {
       @include wh(100%, 100%);
       @extend .flex;
-      padding: 0 10px;
+      padding: 0 40px;
       flex-direction: column;
       justify-content: space-around;
-      .img-box-2 {
-        background: url("../assets/images/bg/logintitle.png") no-repeat center;
-        @include c-img-box(77px, 48px);
-      }
+      // .img-box-2 {
+      //   background: url("../assets/images/bg/logintitle.png") no-repeat center;
+      //   @include c-img-box(77px, 48px);
+      // }
       .input-box {
         width: 100%;
         @extend .flex;
         position: relative;
-        border: 1px solid #222;
+        border: 1px solid #ccc;
         padding: 0 10px;
         box-sizing: border-box;
+        border-radius: 5px;
         .iconfont {
           display: inline-block;
           font-size: 26px;
@@ -166,13 +189,12 @@ export default {
           font-size: 18px;
           border: none;
           outline: none;
-          // border-left: 1px solid red;
         }
       }
       .btn {
         width: 100%;
         height: 50px;
-        background-color: #9c2933;
+        background-color: #8D428A;
         color: #fff;
         outline: none;
         border: none;
@@ -184,46 +206,47 @@ export default {
     }
   }
   .tip {
-    line-height: 80px;
+    color: #fff;
+    padding-top: 40px ;
   }
 }
 
-// Large devices (desktops, less than 1200px)
-@media (max-width: 1199.98px) {
-  .home {
-    .login-box {
-      @include wh(90vw, 40vh);
-      .img-box {
-        flex: 0 0 371px;
-      }
-    }
-  }
-}
-// Medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) {
-  .home {
-    .login-box {
-      @include wh(80vw, 50vh);
-      .img-box {
-        display: none;
-      }
-    }
-  }
-}
+// // Large devices (desktops, less than 1200px)
+// @media (max-width: 1199.98px) {
+//   .home {
+//     .login-box {
+//       @include wh(90vw, 40vh);
+//       .img-box {
+//         flex: 0 0 371px;
+//       }
+//     }
+//   }
+// }
+// // Medium devices (tablets, less than 992px)
+// @media (max-width: 991.98px) {
+//   .home {
+//     .login-box {
+//       @include wh(80vw, 50vh);
+//       .img-box {
+//         display: none;
+//       }
+//     }
+//   }
+// }
 
-// Small devices (landscape phones, less than 768px)
-@media (max-width: 767.98px) {
-  .home {
-    .login-box {
-      @include wh(95vw, 50vh);
-      .img-box {
-        // @include wh(371px, 511px);
-        display: none;
-      }
-    }
-  }
-}
-// Extra small devices (portrait phones, less than 576px)
-@media (max-width: 575.98px) {
-}
+// // Small devices (landscape phones, less than 768px)
+// @media (max-width: 767.98px) {
+//   .home {
+//     .login-box {
+//       @include wh(95vw, 50vh);
+//       .img-box {
+//         // @include wh(371px, 511px);
+//         display: none;
+//       }
+//     }
+//   }
+// }
+// // Extra small devices (portrait phones, less than 576px)
+// @media (max-width: 575.98px) {
+// }
 </style>

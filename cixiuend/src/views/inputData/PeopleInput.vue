@@ -139,15 +139,8 @@ export default {
 
       let obj = {};
       this.list.forEach((item) => {
-        obj[item.mkey] = item.inputText;
+        obj[item.mkey] =item.inputText ?  item.inputText.trim() : item.inputText;
       });
-
-      // let { name } = obj;
-      // let result = await this.$get(this.$api.getuser,{name})
-      // if(result.data.total){
-      //   msgbox({msg:'名字已存在，请不要重复添加'})
-      //   return
-      // }
 
       let { uploadFileList, record } = await this.uploadfile();
       for(let obj of uploadFileList){

@@ -30,12 +30,17 @@
     <div v-if="tableData.length" class="table-box">
       <el-table :data="tableData" border style="width: 100%">
         <el-table-column
-          :prop="item.prop"
           :label="item.label"
           :width="item.width"
           v-for="(item, index) in tableLineList"
           :key="index"
         >
+        <template slot-scope="scope" >
+            <div class="conten-box">
+              {{scope.row[item.prop]}}
+            </div>
+          </template>
+
         </el-table-column>
         <el-table-column fixed="right" label="操作" width="270">
           <template slot-scope="scope" v-if="isShowOprator">
@@ -603,6 +608,10 @@ export default {
     // height: 100%;
     // border: 3px solid red;
     overflow-y: scroll;
+    .conten-box{
+      height: 100%;
+      white-space:pre-line;
+    }
   }
 
   .footer {

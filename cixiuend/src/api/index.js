@@ -7,6 +7,7 @@ export default {
     deleteuser: 'acx/deleteuser', // id
     getpagecount: 'acx/getpagecount',
     getuserbyid: 'acx/getuserbyid', //id
+    getuserbyname:'acx/getuserbyname', //name
 
     //------作品 START-------
     addplay: 'acx/addplay',

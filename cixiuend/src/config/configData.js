@@ -46,7 +46,7 @@
        },
        {
            mkey: "birthday",
-           inputType: 2,
+           inputType: 6,
            title: "出生日期",
        },
        {
@@ -57,10 +57,10 @@
            mkey: "phone",
            title: "联系方式",
        },
-       {
-           mkey: "idcard",
-           title: "身份证",
-       },
+    //    {
+    //        mkey: "idcard",
+    //        title: "身份证",
+    //    },
 
        {
            mkey: "addr",
@@ -90,16 +90,18 @@
 
        {
            mkey: "art_year",
-           inputType: 2,
+           inputType: 7,
            title: "学艺年代",
        },
        {
            mkey: "art_experience",
            title: "学艺经历",
+           inputType: 3,
        },
        {
            mkey: "art_speciality",
            title: "技艺特长",
+           inputType: 3,
        },
        {
            mkey: "typeofwork",
@@ -146,7 +148,7 @@
        },
        {
            mkey: "fistshow",
-           inputType: 2,
+           inputType: 7,
            title: "制作时间",
        },
        {
@@ -156,6 +158,7 @@
        {
            mkey: "preview",
            title: "图案纹样",
+           inputType: 3,
        },
        {
            mkey: "desc",

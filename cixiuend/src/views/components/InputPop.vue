@@ -49,10 +49,37 @@
         v-model="item.inputText"
       />
 
-      <el-checkbox-group class="check-box"  v-model="item.inputText" v-else-if="item.inputType == 5">
-        <el-checkbox :label="text" v-for="(text,index) in item.dropdownList" :key="index"></el-checkbox>
+      <el-checkbox-group
+        class="check-box"
+        v-model="item.inputText"
+        v-else-if="item.inputType == 5"
+      >
+        <el-checkbox
+          :label="text"
+          v-for="(text,index) in item.dropdownList"
+          :key="index"
+        ></el-checkbox>
       </el-checkbox-group>
 
+      <el-date-picker
+        style="width: 100%"
+        v-else-if="item.inputType == 6"
+        v-model="item.inputText"
+        type="month"
+        placeholder="选择月"
+        value-format="yyyy-MM"
+      >
+      </el-date-picker>
+
+      <el-date-picker
+        style="width: 100%"
+        v-else-if="item.inputType == 7"
+        v-model="item.inputText"
+        type="year"
+        placeholder="选择年"
+        value-format="yyyy"
+      >
+      </el-date-picker>
       <input
         v-else
         class="select-list input"
@@ -81,12 +108,9 @@ export default {
   data() {
     return {};
   },
-  created() {
-   
-  },
+  created() {},
 
-  methods: {
-  },
+  methods: {},
 };
 </script>
 
@@ -138,7 +162,7 @@ export default {
     }
   }
 
-  .check-box{
+  .check-box {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;

@@ -8,64 +8,41 @@
       <li class="item">
         <span class="title">作品分类</span>
         <select @change="curIndex = 1" class="input" v-model="successor_level">
-          <option
-            :value="item.name"
-            v-for="(item, index) in level"
-            :key="index"
-          >
+          <option :value="item.name" v-for="(item, index) in level" :key="index">
             {{ item.name }}
           </option>
         </select>
       </li>
       <!-- <el-button class="btn" type="success">新增</el-button> -->
       <el-button @click="search" class="btn" type="primary">查询</el-button>
-      <el-button class="btn" type="info" @click="dialogVisible = true"
-        >高级检索</el-button
-      >
-      <DownloadExcel
-        v-if="tableData.length"
-        :dataList="tableData"
-        dataType="2"
-      />
+      <el-button class="btn" type="info" @click="dialogVisible = true">高级检索</el-button>
+      <DownloadExcel v-if="tableData.length" :dataList="tableData" dataType="2" />
       <!-- <el-button class="btn" type="info">导出</el-button> -->
     </div>
 
     <div v-if="tableData.length" class="table-box">
       <el-table :data="tableData" border :lazy='true'>
-        <el-table-column
-        :prop="item.prop"
-          :label="item.label"
-          :width="item.width"
-          v-for="(item, index) in tableLineList"
-          :key="index"
-        >
-        </el-table-column>
 
+        <el-table-column :prop="item.prop" :label="item.label" :width="item.width" v-for="(item, index) in tableLineList" :key="index">
+
+          <template slot-scope="scope">
+            <div class="conten-box">
+              {{scope.row[item.prop]}}
+            </div>
+          </template>
+        </el-table-column>
         <el-table-column prop="cover_url" label="封面" width="120">
           <template slot-scope="scope">
-            <el-image
-              style="width: 100px; height: 100px"
-              :src="
+            <el-image style="width: 100px; height: 100px" :src="
                 'https://data.lzhs.top/upload/cxData/' + scope.row.cover_url
-              "
-              fit="contain"
-              :lazy="true"
-            >
+              " fit="contain" :lazy="true">
             </el-image>
           </template>
         </el-table-column>
 
-        <el-table-column  label="操作" width="290">
+        <el-table-column label="操作" width="290">
           <template slot-scope="scope" v-if="isShowOprator">
-            <el-button
-              v-show="item.isShow"
-              class="op-btn"
-              :type="item.type || 'success'"
-              size="mini"
-              @click="showPop(scope.row, index)"
-              v-for="(item, index) in btnList"
-              :key="index"
-              >{{ item.name }}
+            <el-button v-show="item.isShow" class="op-btn" :type="item.type || 'success'" size="mini" @click="showPop(scope.row, index)" v-for="(item, index) in btnList" :key="index">{{ item.name }}
             </el-button>
           </template>
         </el-table-column>
@@ -76,14 +53,7 @@
     <div class="footer">
       <Pagination @currentChange="currentChange" />
     </div>
-    <el-dialog
-      title="提示"
-      :visible.sync="dialogVisible"
-      width="40%"
-      top="35vh"
-      :before-close="handleClose"
-      class="dialog"
-    >
+    <el-dialog title="提示" :visible.sync="dialogVisible" width="40%" top="35vh" :before-close="handleClose" class="dialog">
       <ul class="list advanced-search-box">
         <li class="item" v-for="(item, idx) in advancedSearch" :key="idx">
           <span class="title" style="margin-right: 20px">{{ item.title }}</span>
@@ -97,17 +67,7 @@
       </span>
     </el-dialog>
 
-    <ShowMediaPop
-      v-if="$store.state.v1.isShowPopWrapper"
-      :list="infoList"
-      :popType="popType"
-      :title="title"
-      :accept="accept"
-      :mtype="mtype"
-      @editInfo="editInfo"
-      @changeMedia="uploadMedia"
-      @deleleMedia="deleleMedia"
-    />
+    <ShowMediaPop v-if="$store.state.v1.isShowPopWrapper" :list="infoList" :popType="popType" :title="title" :accept="accept" :mtype="mtype" @editInfo="editInfo" @changeMedia="uploadMedia" @deleleMedia="deleleMedia" />
   </div>
 </template>
 
@@ -149,20 +109,20 @@ export default {
       ],
       advancedSearch: [
         {
-          title: "导演",
-          mkey: "director",
+          title: "作者",
+          mkey: "playwright",
         },
         {
-          title: "戏班",
-          mkey: "teamname",
+          title: "作品名称",
+          mkey: "name",
         },
         {
-          title: "演出时间",
-          mkey: "showtime",
+          title: "图案纹样",
+          mkey: "preview",
         },
         {
-          title: "演出地址",
-          mkey: "showaddr",
+          title: "内容描述",
+          mkey: "desc",
         },
       ],
       tableData: [],
@@ -695,6 +655,18 @@ export default {
     // height: 100%;
     // border: 3px solid red;
     overflow: scroll;
+    .conten-box {
+      height: 100%;
+      white-space: pre-line;
+    }
+    .table-textarea {
+      display: inline-block;
+      // height: 300px;
+      width: 100%;
+      resize: none;
+      align-items: center;
+      vertical-align: center;
+    }
   }
 
   .footer {
