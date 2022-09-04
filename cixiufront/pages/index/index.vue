@@ -8,10 +8,11 @@
 				:current="swiperCurrent"
 				height="375rpx"
 				@change="swiperChange"
+				imgMode='aspectFit'
 				@click="(i) => handleClick('swiper', i)"
 			></u-swiper>
 			<view class="indicatorBox flex f_a_center f_j_center">
-				<view v-for="(item, index) in swiperList" :key="item" class="indicatorItem" :class="{ 'indicatorItem_active' : (index === swiperCurrent) }"></view>
+				<view v-for="(item, index) in swiperList" :key="index" class="indicatorItem" :class="{ 'indicatorItem_active' : (index === swiperCurrent) }"></view>
 			</view>
 		</view>
 		
@@ -101,9 +102,13 @@
 				img: this.$img,
 				swiperCurrent: 0,
 				swiperList: [
-					'https://cdn.uviewui.com/uview/swiper/swiper1.png',
-					'https://cdn.uviewui.com/uview/swiper/swiper2.png',
-					'https://cdn.uviewui.com/uview/swiper/swiper3.png',
+					// 'https://cdn.uviewui.com/uview/swiper/swiper1.png',
+					// 'https://cdn.uviewui.com/uview/swiper/swiper2.png',
+					// 'https://cdn.uviewui.com/uview/swiper/swiper3.png',
+					'https://data.lzhs.top/upload/cxData/1654780060061.jpeg',
+					'https://data.lzhs.top/upload/cxData/1654780702177.jpeg',
+					'https://data.lzhs.top/upload/cxData/1654676906447.jpeg'
+
 				],
 				inheritedList: [],
 				newsList: [],

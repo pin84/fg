@@ -37,8 +37,9 @@
       <view class="formTips" @click="handlePass">游客登录</view>
     </view>
     <view class="tipsBox">
-      <view>三江侗族自治县文化馆</view>
-      <view>三江侗族自治县非物质文化遗产保护与发展中心</view>
+			<view>三江侗族自治县文化馆</view>
+			<view>（ 三江侗族自治县非物质文化遗产保护与发展中心 ）</view>
+			<view>柳州城市职业学院</view>
     </view>
   </view>
 </template>

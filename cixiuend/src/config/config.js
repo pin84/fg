@@ -2,8 +2,8 @@
 let baseURL,showImgURL
 let env = process.env.NODE_ENV
 if (env == 'development') {
-    baseURL = 'http://localhost:3000'
-    // baseURL = 'https://data.lzhs.top'
+    // baseURL = 'http://localhost:3000'
+    baseURL = 'https://data.lzhs.top'
     // baseURL = 'http://42ml122265.wicp.vip'
     showImgURL='https://data.lzhs.top/upload/cxData/'
 } else {
