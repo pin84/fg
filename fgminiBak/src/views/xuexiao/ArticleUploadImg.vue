@@ -80,7 +80,6 @@ export default {
       let res = await get("/fg/getbannerlist");
       let list = res.data;
       list.forEach((item) => {
-        // item.imgURL = "https://data.lzhs.top/fgstatic/";
         this.srcList.push(item.imgURL);
         item.create_time = item.create_time.split("T")[0];
       });

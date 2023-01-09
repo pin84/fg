@@ -114,9 +114,10 @@ export default {
     },
     async initData() {
       let res = await this.$get("/fg/getbannerlist");
+
+      debugger
       let list = res.data;
       list.forEach((item) => {
-        // item.imgURL = "https://data.lzhs.top/fgstatic/";
         this.srcList.push(item.imgURL);
         item.create_time = item.create_time.split("T")[0];
         item.typecn = item.type == 1 ? '首页' : '驻村书记说'

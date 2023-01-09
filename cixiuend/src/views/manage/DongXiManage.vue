@@ -33,8 +33,8 @@
         </el-table-column>
         <el-table-column prop="cover_url" label="封面" width="120">
           <template slot-scope="scope">
-            <el-image style="width: 100px; height: 100px" :src="
-                'https://data.lzhs.top/upload/cxData/' + scope.row.cover_url
+            <el-image v-if="imgURL" style="width: 100px; height: 100px" :src="
+                imgURL + scope.row.cover_url
               " fit="contain" :lazy="true">
             </el-image>
           </template>
@@ -89,6 +89,7 @@ export default {
       name: "",
       addr: "",
       successor_level: "全部",
+      imgURL:'',
       level: [
         {
           id: 1,
@@ -216,9 +217,11 @@ export default {
     DownloadExcel,
   },
   created() {
+    this.imgURL = showImgURL
     this.initData();
     this.search();
   },
+
   methods: {
     initData() {
       let { dropdownList } = DongXiData[0];
